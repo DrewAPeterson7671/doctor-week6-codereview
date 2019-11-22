@@ -5,10 +5,12 @@ import './styles.css';
 import { DoctorService } from './../src/doctor-backend.js';
 
 $(document).ready(function(){
-  $('#symptominput').submit(function() {
+  $('.forminput').submit(function(event) {
+    event.preventDefault();
+
     const symptom = $('#symptominput').val();
-    $('#symptominput').val("");
     console.log(symptom);
+    $('#symptominput').val("");
 
     (async () => {
       let doctorService = new DoctorService();
@@ -17,7 +19,7 @@ $(document).ready(function(){
     })();
 
     function getElements(response) {
-      $('.showDoctor').text(`${response.data[0].profile.last_name}`);  /// NEEDS WORK
+      $('.showDoctor').text(`${response.data[0].profile.last_name}`);
     }
   });
 
