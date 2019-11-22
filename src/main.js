@@ -5,7 +5,7 @@ import './styles.css';
 import { DoctorService } from './../src/doctor-backend.js';
 
 $(document).ready(function(){
-  $('.forminput').submit(function(event) {
+  $('#searchbutton').click(function(event) {
     event.preventDefault();
 
     const symptom = $('#symptominput').val();
@@ -16,6 +16,7 @@ $(document).ready(function(){
       let doctorService = new DoctorService();
       const response = await doctorService.getDoctorBySymptom(symptom);
       getElements(response);
+      console.log(response);
     })();
 
     function getElements(response) {
