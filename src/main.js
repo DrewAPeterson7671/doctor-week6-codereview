@@ -18,14 +18,22 @@ $(document).ready(function(){
       const response = await doctorService.getDoctorBySymptom(symptom);
       getElements(response);
       // console.log(response);
-      console.log(response.data[0].practices[0].phones[1].number);
+      console.log(response.data[0].practices[0].visit_address.city);
     })();
 
     function getElements(response) {
       $('.showDoctor').show();
       $('ul#doctor1').append(`<li> ${response.data[0].profile.first_name}  ${response.data[0].profile.last_name} </li>`);
       $('ul#doctor1').append(`<li> ${response.data[0].practices[0].phones[0].number} </li>`);
-    };
+      $('ul#doctor1').append(`<li> ${response.data[0].practices[0].visit_address.street} </li>`);
+      $('ul#doctor1').append(`<li> ${response.data[0].practices[0].visit_address.city}, ${response.data[0].practices[0].visit_address.state} </li>`);
+      $('ul#doctor1').append(`<li> ${response.data[0].practices[0].visit_address.zip} </li>`);
+
+
+
+      ///prob with phones - type of phone or fax
+
+    }
 
     // const sortResponse = function(response) {
     //   response.data.foreach(function(respond) {
