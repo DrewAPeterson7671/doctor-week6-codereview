@@ -8,8 +8,9 @@ $(document).ready(function(){
   $('#searchbutton').click(function(event) {
     event.preventDefault();
 
+    $("ul.showDoctor").empty();
+
     const symptom = $('#symptominput').val();
-    console.log(symptom);
     $('#symptominput').val("");
 
     (async () => {
@@ -20,7 +21,16 @@ $(document).ready(function(){
     })();
 
     function getElements(response) {
-      $('.showDoctor').text(`${response.data[0].profile.last_name}`);
+      $('.showDoctor').show();
+      $('ul#doctor1').append('<il>' + `${response.data[0].profile.first_name}` + '</il>');
+      $('ul#doctor1').append(`<il>` + `${response.data[0].profile.last_name}` + `</il>`);
+
+    const sortResponse = function(response)
+      response.data.foreach(function(respond) {
+        $('ul#doctorList').append(`${respond.profile.first_name}`);
+        $('ul#doctorList').append(`${respond.profile.first_name}`);
+      })
+
     }
   });
 
