@@ -17,13 +17,14 @@ $(document).ready(function(){
       let doctorService = new DoctorService();
       const response = await doctorService.getDoctorBySymptom(symptom);
       getElements(response);
-      console.log(response);
+      // console.log(response);
+      console.log(response.data[0].practices[0].phones[1].number);
     })();
 
     function getElements(response) {
       $('.showDoctor').show();
-      $('ul#doctor1').append("<li>" + ${response.data[0].profile.first_name} + "</li>");
-      $('ul#doctor1').append("<li>" + ${response.data[0].profile.last_name} + "</li>");
+      $('ul#doctor1').append(`<li> ${response.data[0].profile.first_name}  ${response.data[0].profile.last_name} </li>`);
+      $('ul#doctor1').append(`<li> ${response.data[0].practices[0].phones[1].number} </li>`);
     };
 
     // const sortResponse = function(response) {
