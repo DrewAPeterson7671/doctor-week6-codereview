@@ -8,6 +8,7 @@ $(document).ready(function(){
   $('#symptominput').submit(function() {
     const symptom = $('#symptominput').val();
     $('#symptominput').val("");
+    console.log(symptom);
 
     (async () => {
       let doctorService = new DoctorService();
