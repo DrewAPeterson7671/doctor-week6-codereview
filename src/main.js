@@ -22,16 +22,17 @@ $(document).ready(function(){
 
     function getElements(response) {
       $('.showDoctor').show();
-      $('ul#doctor1').append('<il>' + `${response.data[0].profile.first_name}` + '</il>');
-      $('ul#doctor1').append(`<il>` + `${response.data[0].profile.last_name}` + `</il>`);
+      $('ul#doctor1').append("<li>" + ${response.data[0].profile.first_name} + "</li>");
+      $('ul#doctor1').append("<li>" + ${response.data[0].profile.last_name} + "</li>");
+    };
 
-    const sortResponse = function(response)
-      response.data.foreach(function(respond) {
-        $('ul#doctorList').append(`${respond.profile.first_name}`);
-        $('ul#doctorList').append(`${respond.profile.first_name}`);
-      })
+    // const sortResponse = function(response) {
+    //   response.data.foreach(function(respond) {
+    //     $('ul#doctorList').append("<li>" + ${respond.profile.first_name} + "</li>");
+    //     $('ul#doctorList').append(`${respond.profile.last_name}`);
+    //   })
+    // };
 
-    }
   });
 
 });
