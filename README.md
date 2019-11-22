@@ -12,6 +12,13 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 
 | Behavior | Input Example | Output Example |
 | - | - | - |
+| Enter a medical issue to receive list of doctors in Portland that fit that criteria | Sore Throat | list of sore throat doctors |
+| If the query produces doctors, then contact info for those doctors should list contact info | Dr Brown | Dr Emitt Brown, address, phone#, website and if accepting new patients|
+| If the API call resutls in error, returns notification of what error is | Search Broken Arm | Message stating error |
+| If no doctor meets criteria, notify that no doctor meets the criteria | Brain Surgery | No Doctor Meets Your Search Criteria |
+
+
+
 
 ## Github Link
 {[Github link to project](https://drewapeterson7671.github.io/week-1-code-review/index.html)}
