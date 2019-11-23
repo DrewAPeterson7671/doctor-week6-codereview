@@ -1,3 +1,4 @@
+
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -37,12 +38,12 @@ $(document).ready(function(){
     }
 
     // const sortResponse = function(response) {
-    //   response.data.foreach(function(respond) {
-    //     $('ul#doctorList').append("<li>" + ${respond.profile.first_name} + "</li>");
-    //     $('ul#doctorList').append(`${respond.profile.last_name}`);
-    //   })
-    // };
+      //   response.data.foreach(function(respond) {
+        //     $('ul#doctorList').append("<li>" + ${respond.profile.first_name} + "</li>");
+        //     $('ul#doctorList').append(`${respond.profile.last_name}`);
+        //   })
+        // };
 
-  });
+      });
 
-});
+    });
