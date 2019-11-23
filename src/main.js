@@ -18,7 +18,7 @@ $(document).ready(function(){
       const response = await doctorService.getDoctorBySymptom(symptom);
       getElements(response);
       // console.log(response);
-      console.log(response.data[0].practices[0].visit_address.city);
+      console.log(response.data[0].practices[0].accepts_new_patients);
     })();
 
     function getElements(response) {
@@ -28,7 +28,7 @@ $(document).ready(function(){
       $('ul#doctor1').append(`<li> ${response.data[0].practices[0].visit_address.street} </li>`);
       $('ul#doctor1').append(`<li> ${response.data[0].practices[0].visit_address.city}, ${response.data[0].practices[0].visit_address.state} </li>`);
       $('ul#doctor1').append(`<li> ${response.data[0].practices[0].visit_address.zip} </li>`);
-
+      $('ul#doctor1').append(`<li> ${response.data[0].practices[0].accepts_new_patients} </li>`);
 
 
       ///prob with phones - type of phone or fax
