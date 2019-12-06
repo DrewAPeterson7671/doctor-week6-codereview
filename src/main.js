@@ -18,12 +18,15 @@ $(document).ready(function(){
       let doctorService = new DoctorService();
       const response = await doctorService.getDoctorBySymptom(symptom);
       getElements(response);
-      // console.log(response);
-      // console.log(response.data[0].practices[0].website);
+      console.log(response);
+      console.log(response.data[0].practices[0].website);
     })();
 
     function getElements(response) {
       $('.showDoctor').show();
+      if (response.meta.error) {
+        $('ul#doctor1').append(`<li> Error in Search ${response.meta.message} ${response.meta.http_status_code}</li>`);
+       }
       $('ul#doctor1').append(`<li> ${response.data[0].profile.first_name}  ${response.data[0].profile.last_name} </li>`);
       $('ul#doctor1').append(`<li> ${response.data[0].practices[0].phones[0].number} </li>`);
       $('ul#doctor1').append(`<li> ${response.data[0].practices[0].visit_address.street} </li>`);
