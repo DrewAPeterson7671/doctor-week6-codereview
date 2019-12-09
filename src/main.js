@@ -9,7 +9,7 @@ $(document).ready(function(){
   $('#searchbutton').click(function(event) {
     event.preventDefault();
 
-    $("ul.showDoctor").empty();
+
 
     const symptom = $('#symptominput').val();
     $('#symptominput').val("");
@@ -24,6 +24,7 @@ $(document).ready(function(){
 
     function getElements(response) {
       $('.showDoctor').show();
+      $("ul#doctor1").empty();
       if (response.meta.error) {
         $('ul#doctor1').append(`<li> Error in Search ${response.meta.message} ${response.meta.http_status_code}</li>`);
        }
